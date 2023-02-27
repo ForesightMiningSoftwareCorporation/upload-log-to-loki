@@ -19,7 +19,7 @@ test('test log should fail if files is not existing', () => {
   const log_file = '__tests__/non_existing.txt'
   const log_entries = parse_logs(log_file);
   expect(log_entries.entries).toBeNull()
-  expect(log_entries.error).toEqual(`Error: File ${log_file} not found`);
+  expect(log_entries.error).toEqual('Could not read the output');
 })
 
 test('test log parsing should ignore empty lines or lines not haveing timestamp', () => {
