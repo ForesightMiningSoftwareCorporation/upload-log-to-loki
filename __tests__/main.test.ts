@@ -48,3 +48,12 @@ test('test log parsing', () => {
   expect(log_entries.entries![1][0]).toEqual('1677496460000781800');
   expect(log_entries.entries![1][1]).toEqual('bizz fuzz');
 })
+
+
+test('test log parsing', () => {
+  const log_file = '__tests__/log_3.txt'
+  const log_entries = parse_logs(log_file);
+  expect(log_entries.error).toBeNull()
+  expect(log_entries.entries).not.toBeNull()
+  expect(log_entries.entries).toHaveLength(2);
+})

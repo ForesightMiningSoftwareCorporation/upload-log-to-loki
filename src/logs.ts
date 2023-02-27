@@ -1,4 +1,5 @@
 import * as fs from 'fs'
+import * as core from '@actions/core'
 
 export interface LogEntries {
   entries: string[][] | null
@@ -12,6 +13,7 @@ export const parse_logs = (log_file: string, separator = '; '): LogEntries => {
     const entries: string[][] = []
     for (const line of raw_entries.split('\n')) {
       const line_splitted = line.split(separator)
+      core.info(`Got ${line} from logs ${separator} ...`)
       if (line_splitted.length !== 2) continue
       // Parse the timestamp
       const [date_sec, nanoseconds] = line_splitted[0].split('.')

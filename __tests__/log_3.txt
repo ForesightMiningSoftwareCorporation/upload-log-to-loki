@@ -1,0 +1,2 @@
+2023-02-27T13:12:49.208015Z;  [bin (2021)] "/home/lpostula/Projects/fmsc/ci_tests/src/main.rs"
+2023-02-27T13:12:49.208217Z;  rustfmt --edition 2021 --check /home/lpostula/Projects/fmsc/ci_tests/src/main.rs
