@@ -33,5 +33,5 @@ export const upload = async (
     body: JSON.stringify(data)
   }
 
-  await fetch(url, options)
+  await fetch(`${url}/loki/api/v1/push`, options)
 }
