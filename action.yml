@@ -1,11 +1,30 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'upload-log-to-loki'
+description: 'Take a timestamp annotated log and upload it to loki'
+author: 'ForesightMiningSoftwareCorporation'
 inputs:
-  milliseconds: # change this
+  log_file:
+    required: false
+    description: 'Log file to upload to loki'
+    default: 'log.txt'
+  log_separator:
+    required: false
+    description: 'Separator between timestamp and log'
+    default: '; '
+  loki_url:
     required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+    description: 'URL to contact loki'
+  loki_org_id:
+    required: true
+    description: 'Loki Org Id'
+  loki_username:
+    required: true
+    description: 'Username to talk to loki'
+  loki_password:
+    required: true
+    description: 'Password to talk to loki'
+  loki_labels:
+    required: true
+    description: 'coma separated key value pair of label to send to loki'
 runs:
   using: 'node16'
   main: 'dist/index.js'
